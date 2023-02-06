@@ -90,8 +90,8 @@ int main(int argc, wchar_t *argv[]) {
 	}
 
 	printf("[INFO] YuanShen process handle: %p\n", hProc);
-	InjectDll(hProc, c2w(format("{}\\DebuggerBypass.dll", c2w(tempDir)).c_str()));
-
+	//InjectDll(hProc, c2w(format("{}\\DebuggerBypass.dll", tempDir).c_str()));
+	InjectDll(hProc, (wchar_t*)format(L"{}\\DebuggerBypass.dll", c2w(tempDir)).c_str());
 	#ifdef _DEBUG
 	printf("Wait 10 seconds for YuanShen init...\n");
 	Sleep(10000);
